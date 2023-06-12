@@ -1,19 +1,16 @@
 #!/usr/bin/python3
-import sys
+# program prints argc & argv
 
-
-def star():
-    argc = len(sys.argv) - 1
-    if argc == 0:
-        print("0 arguments.")
-    elif argc == 1:
-        print("1 argument:")
-        print("1: {}".format(sys.argv[1]))
-    else:
-        print("{:d} arguments:".format(argc))
-        for count in range(1, argc + 1):
-            print("{}: {}".format(count, sys.argv[count]))
-
-
+from sys import argv
 if __name__ == "__main__":
-    star()
+    if len(argv) == 1:
+        print("0 arguments.")
+    elif len(argv) == 2:
+        print("1 argument:")
+        print(f"1: {argv[1]}")
+    else:
+        print(f"{(len(argv) - 1)} arguments:")
+        j = 1
+        for i in range(len(argv)-1):
+            print(f"{j}: {argv[j]}")
+            j = j + 1
